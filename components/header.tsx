@@ -34,9 +34,18 @@ export const Header: React.FC<HeaderProps> = ({ user }) => {
           'w-full'
         )}
       >
-        {/* This div can be used for a logo or title on the left if needed */}
-        <div></div>
-
+        <div className="flex flex-col items-start">
+          <span className="font-semibold text-sm">Adultistry</span>
+          <a
+            href="http://zqktlwiuxaln2atnrwacl6z5gr6jo4vv2nzldx5oyzjtvqrt2tcfcvyd.onion"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-muted-foreground underline underline-offset-2 hover:text-foreground"
+          >
+            Universal Search
+          </a>
+        </div>
+        <h1>zqktlwiuxaln2atnrwacl6z5gr6jo4vv2nzldx5oyzjtvqrt2tcfcvyd.onion</h1>
         <div className="flex items-center gap-2">
           {isRootPage && (
             <Button

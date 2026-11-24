@@ -30,7 +30,7 @@ export async function sendSmtpMail(message: {
   })
 
   await transporter.sendMail({
-    from: process.env.EMAIL_FROM ?? 'Morphic <noreply@morphic.local>',
+    from: process.env.EMAIL_FROM ?? 'Adultistry <noreply@adultistry.local>',
     ...message
   })
 }
