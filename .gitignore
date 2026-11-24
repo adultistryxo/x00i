@@ -42,3 +42,6 @@ _local/
 
 # claude code local state (settings, launch config, worktrees)
 .claude/
+/dist/
+.vinext/
+.cloudflare/

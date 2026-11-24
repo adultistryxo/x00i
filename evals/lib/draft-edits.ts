@@ -1,5 +1,6 @@
 import type { UIMessage } from 'ai'
 import { existsSync, readFileSync } from 'fs'
+import { fileURLToPath } from 'node:url'
 import path from 'path'
 
 import { parseDraftBlocks } from '@/lib/draft/draft'
@@ -63,7 +64,7 @@ type SeedItem = {
  * when it exists.
  */
 export const LOCAL_SEEDS_PATH = path.join(
-  __dirname,
+  path.dirname(fileURLToPath(import.meta.url)),
   '..',
   '_local',
   'draft-edits-seeds.json'

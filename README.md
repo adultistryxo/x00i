@@ -114,6 +114,16 @@ Visit http://localhost:3000.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fmiurla%2Fmorphic&env=OPENAI_API_KEY,TAVILY_API_KEY,ENABLE_AUTH)
 
+### Cloudflare Workers
+
+This app uses Next.js server rendering and must be deployed to Workers with vinext, not as a static Pages site. In Workers Builds, connect this repository and set:
+
+- Build command: `bun run build:vinext`
+- Deploy command: `bun run deploy:vinext:prebuilt`
+- Preview command: `bun run deploy:vinext:prebuilt -- --preview`
+
+Configure the app's required API keys under the Worker’s **Settings → Variables and Secrets**. For a local authenticated deploy, use `bun run deploy:vinext`.
+
 ## Contributing
 
 We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details on how to get started, including local development setup.

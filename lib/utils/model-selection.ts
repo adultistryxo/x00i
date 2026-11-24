@@ -1,4 +1,4 @@
-import { ReadonlyRequestCookies } from 'next/dist/server/web/spec-extension/adapters/request-cookies'
+import type { cookies } from 'next/headers'
 
 import { DEFAULT_MODEL } from '@/lib/config/default-model'
 import { isCloudDeployment } from '@/lib/config/load-models-config'
@@ -11,6 +11,8 @@ import { fetchAvailableModels } from '@/lib/models/fetch-models'
 import { Model } from '@/lib/types/models'
 import { SearchMode } from '@/lib/types/search'
 import { isProviderEnabled } from '@/lib/utils/registry'
+
+type ReadonlyRequestCookies = Awaited<ReturnType<typeof cookies>>
 
 const MODE_FALLBACK_ORDER: SearchMode[] = ['quick', 'adaptive']
 const PROVIDER_LABELS: Record<string, string> = {
